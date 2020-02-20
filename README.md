@@ -7,7 +7,7 @@ This project was created for a C220 Game Technology class at Indiana University 
 3. Added squeezing and stretching of the paddle
 4. Made the blocks fall off the screen when they are hit 
 5. Made the blocks rotate as they are hit
-6. Made the ball wobble when it hits something
+6. Made the ball wobble when it hits something and added rotation
 7. Made the ball change color when it hits something
 8. Added particles when a block is hit
 9. Added a comet trail to the ball
