@@ -19,6 +19,7 @@ func change_score(s):
 	$Score.update_score(score)
 	#if there are no more tiles, show the winning screen
 	if len(get_tree().get_nodes_in_group("Tiles")) == 0:
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://Scenes/Win.tscn")
 
 func change_lives(l):
@@ -26,6 +27,7 @@ func change_lives(l):
 	$Lives.update_lives(lives)
 	#if there are no more lives show the game over screen
 	if lives <= 0:
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://Scenes/GameOver.tscn")
 
 func make_new_ball(pos):

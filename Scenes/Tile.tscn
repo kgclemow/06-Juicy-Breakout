@@ -1,6 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Tile.gd" type="Script" id=1]
+[ext_resource path="res://assets/smoke_04.png" type="Texture" id=2]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.0350877, 0.385965, 0.754386, 1 )
+colors = PoolColorArray( 0.0117647, 0.00784314, 0.00784314, 0, 0.532959, 0.684879, 0.921875, 1, 0.284653, 0.425782, 0.800781, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 3.0
+linear_accel_random = 0.5
+angle_random = 0.5
+scale = 0.25
+scale_random = 1.0
+color_ramp = SubResource( 3 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 16 )
@@ -13,6 +34,17 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Smoke" type="Particles2D" parent="."]
+scale = Vector2( 0.01, 0.01 )
+emitting = false
+lifetime = 2.0
+speed_scale = 3.0
+explosiveness = 0.07
+randomness = 0.03
+local_coords = false
+process_material = SubResource( 4 )
+texture = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -32.0
@@ -28,3 +60,5 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Timer" type="Timer" parent="."]

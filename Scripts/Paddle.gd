@@ -12,7 +12,7 @@ var _target = position
 func _ready():
 	set_process(true)
 	position.y = -30
-	$Tween.interpolate_property(self, position, _target, 1.0, Tween.TRANS_BOUNCE, Tween.EASE_OUT)
+	$Tween.interpolate_property(self, "position", position, _target, 1.0, Tween.TRANS_BOUNCE, Tween.EASE_OUT)
 	$Tween.start()
 
 func _physics_process(delta):
