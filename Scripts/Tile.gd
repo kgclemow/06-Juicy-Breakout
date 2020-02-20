@@ -19,7 +19,7 @@ func _ready():
 	t.set_wait_time(time)
 	t.start()
 	yield(t, "timeout")
-	$Tween.interpolate_property(self, "position", position, 1.0, Tween.TRANS_BOUNCE, Tween.EASE_OUT)
+	$Tween.interpolate_property(self, "position", position, _target, 1.0, Tween.TRANS_BOUNCE, Tween.EASE_OUT)
 	$Tween.start()
 
 func _process(delta):
